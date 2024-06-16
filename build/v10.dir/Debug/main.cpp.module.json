@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "v10.dir\\Debug\\main.obj",
+            "outputs": [
+                "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\v10.dir\\Debug\\vc143.pdb",
+                "v10.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}

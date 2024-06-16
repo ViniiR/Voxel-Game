@@ -1,0 +1,4 @@
+C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/v10.dir
+C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/PACKAGE.dir
+C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/ZERO_CHECK.dir
