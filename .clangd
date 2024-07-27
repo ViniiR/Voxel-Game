@@ -1,5 +1,5 @@
 CompileFlags:
-  Add:
+  Add: 
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/cppwinrt/winrt/impl"
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/cppwinrt/winrt"
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/netcx/shared/1.0/net"
@@ -17,10 +17,10 @@ CompileFlags:
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt"
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/wrl"
     - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/wrl/wrappers"
-InlayHints:
-  BlockEnd: No
-  Designators: Yes
-  Enabled: Yes
-  ParameterNames: Yes
-  DeducedTypes: Yes
-  TypeNameLimit: 24
+# InlayHints:
+#   BlockEnd: No
+#   Designators: Yes
+#   Enabled: Yes
+#   ParameterNames: Yes
+#   DeducedTypes: Yes
+#   TypeNameLimit: 24

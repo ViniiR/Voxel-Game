@@ -1,14 +1,13 @@
 #ifndef UNICODE
 #define UNICODE
+#endif
 
-#include <SDL2/SDL_main.h>
 #include "src/hpp/initSDL.hpp"
 #include <windows.h>
+#include <cstdio>
 #include "wincon.h"
 #include "winuser.h"
-#include "stdio.h"
-
-#endif
+#include <iostream>
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam,
                             LPARAM lParam) {
@@ -41,7 +40,8 @@ void CreateConsole() {
     freopen_s(&STREAM, "CONOUT$", "w", stdout);
     freopen_s(&STREAM, "CONOUT$", "w", stderr);
     freopen_s(&STREAM, "CONOUT$", "r", stdin);
-    puts("Debug Console Started");
+
+    std::cout << "DBGC started" << std::endl;
 }
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -93,3 +93,5 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 /*}*/
 /*return 0;*/
 /*}*/
+
+#include <SDL2/SDL_main.h>
