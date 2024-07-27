@@ -24,15 +24,22 @@ if (NOT SDL2_FOUND)
     message(FATAL_ERROR "SDL2 NOT FOUND")
 endif()
 
+find_package(OpenGL REQUIRED)
+if (NOT OpenGL_FOUND)
+    message(FATAL_ERROR "OpenGL NOT FOUND")
+endif()
+
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE ${SDL2_INCLUDE_DIRS}
+    PRIVATE ${OpenGL_INCLUDE_DIRS}
 )
 
 target_link_libraries(
     ${PROJECT_NAME}
     SDL2::SDL2
     SDL2::SDL2main
+    ${OpenGL_LIBRARIES}
 )
 
 # v10:

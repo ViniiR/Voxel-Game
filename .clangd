@@ -1,0 +1,26 @@
+CompileFlags:
+  Add:
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/cppwinrt/winrt/impl"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/cppwinrt/winrt"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/netcx/shared/1.0/net"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/netcx/shared/1.0/net/wifi"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared/ndis"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/shared"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt/sys"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winsqlite"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/qcc"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/qcc/windows"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/gl"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/alljoyn_c"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/wrl"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/winrt/wrl/wrappers"
+InlayHints:
+  BlockEnd: No
+  Designators: Yes
+  Enabled: Yes
+  ParameterNames: Yes
+  DeducedTypes: Yes
+  TypeNameLimit: 24
