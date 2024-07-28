@@ -1,15 +1,6 @@
 #include "hpp/initSDL.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_events.h>
-#include <SDL2/SDL_opengl.h>
-#include <GL/gl.h>
-
-GLfloat vertices[] = {
-    // x, y, z
-    -0.5f, -0.5f, 0.0f,  // Bottom left
-    0.5f,  -0.5f, 0.0f,  // Bottom right
-    0.0f,  0.5f,  0.0f   // Top
-};
 
 bool initSDL() {
     int screenW = 800;
@@ -31,9 +22,6 @@ bool initSDL() {
     if (!context) {
         return false;
     }
-
-    unsigned int VBO;
-    /*gl*/
 
     bool quit = false;
     while (!quit) {

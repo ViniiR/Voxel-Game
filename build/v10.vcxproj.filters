@@ -7,9 +7,6 @@
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\initSDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\vector3d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Vinii\Documents\VsCode\block-game\CMakeLists.txt" />

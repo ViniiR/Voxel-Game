@@ -323,7 +323,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\main.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\initSDL.cpp" />
-    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\vector3d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Vinii\Documents\VsCode\block-game\build\ZERO_CHECK.vcxproj">
