@@ -1,10 +1,9 @@
-#include <SDL2/SDL.h>
 #include <SDL2/SDL_main.h>
-#include "./src/initSDL.cpp"
+#include "src/hpp/initSDL.hpp"
 
 int main(int argc, char* argv[]) {
-    /*if (!initSDL()) {*/
-    /*    return -1;*/
-    /*}*/
+    if (!initSDL()) {
+        return -1;
+    }
     return 0;
 }

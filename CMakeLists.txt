@@ -17,6 +17,7 @@ add_executable(
     ${PROJECT_NAME}
     WIN32 ${SRC_FILES}
 )
+    # WIN32
 
 find_package(SDL2 REQUIRED CONFIG COMPONENTS HINTS "C:/SDL2/x86_64-w64-mingw32/lib/cmake/SDL2/" )
 if (NOT SDL2_FOUND)
