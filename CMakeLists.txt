@@ -10,7 +10,8 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/binary)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-file(GLOB SRC_FILES "main.cpp" "src/*.cpp" )
+file(GLOB SRC_FILES "main.cpp" "src/*.cpp" "glad/*.c" )
+set(GLAD_INCLUDE_DIRS "glad/")
 # "sources/headers/*.hpp"
 
 add_executable(
@@ -31,6 +32,7 @@ endif()
 
 target_include_directories(
     ${PROJECT_NAME}
+    PRIVATE ${GLAD_INCLUDE_DIRS}
     PRIVATE ${SDL2_INCLUDE_DIRS}
     PRIVATE ${OpenGL_INCLUDE_DIRS}
 )

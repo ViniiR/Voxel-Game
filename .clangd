@@ -1,0 +1,5 @@
+CompileFlags:
+  Add: [
+    "-I/mnt/c/Users/Vinii/Documents/VsCode/block-game/glad/glad.h",
+    "-I/mnt/c/Users/Vinii/Documents/VsCode/block-game/glad/khrplatform.h",
+  ]

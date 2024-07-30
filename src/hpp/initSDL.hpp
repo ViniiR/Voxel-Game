@@ -1,4 +1,4 @@
 #pragma once
 
-bool initSDL();
+int initSDL();
 
