@@ -8,8 +8,8 @@
 //does NOT work when using CMake
 //TODO: test with minimal CMake setup
 int main(int argc, char* argv[]) {
-    std::cout << "puta que pariu" << std::endl;
-    puts("porra");
+    std::cout << "no output" << std::endl;
+    puts("no output");
     printf("👍👍👍👍👍👍👍👍👍");
 
     return initSDL();
