@@ -27,8 +27,8 @@ bool shouldCloseWindow = false;
 GLuint graphicsPipelineShaderProgram = 0;
 GLuint vertexArrayObject = 0;
 GLuint vertexBufferObject = 0;
-const int screenH = 720;
-const int screenW = 1280;
+const int screenW = 1980;
+const int screenH = 1200;
 const std::string shadersDirectory = "../shaders/";
 const std::string fragmentShaderFileName = "fragment.glsl";
 const std::string vertexShaderFileName = "vertex.glsl";
@@ -131,7 +131,7 @@ void vertexSpecification() {
         // R     G     B
         //
         // x     y     z
-        -0.5f, 0.5f, 0.0f,  // Top Left Vertex position
+        -0.5f, 0.7f, 0.0f,  // Top Left Vertex position
         0.0f, 0.0f, 1.0f,   // RGB color
         // R     G     B
         //
