@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 file(GLOB SRC_FILES "main.cpp" "src/*.cpp" "glad/*.c" )
 set(GLAD_INCLUDE_DIRS "glad/")
+set(GLM_INCLUDE_DIRS "glm/")
 # "sources/headers/*.hpp"
 
 add_executable(
@@ -19,6 +20,10 @@ add_executable(
     WIN32 ${SRC_FILES}
 )
     # WIN32
+find_package(glm CONFIG REQUIRED)
+if (NOT glm_FOUND)
+    message(FATAL_ERROR "GLM NOT FOUND")
+endif()
 
 find_package(SDL2 REQUIRED CONFIG COMPONENTS HINTS "C:/SDL2/x86_64-w64-mingw32/lib/cmake/SDL2/" )
 if (NOT SDL2_FOUND)
@@ -39,8 +44,10 @@ target_include_directories(
 
 target_link_libraries(
     ${PROJECT_NAME}
+    PRIVATE
     SDL2::SDL2
     SDL2::SDL2main
+    glm::glm
     ${OpenGL_LIBRARIES}
 )
 

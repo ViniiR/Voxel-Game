@@ -1,4 +1,6 @@
 BasedOnStyle: Google
 IndentWidth: 4
+AccessModifierOffset: 4
+IndentAccessModifiers: True
 ColumnLimit: 80
 SortIncludes: false

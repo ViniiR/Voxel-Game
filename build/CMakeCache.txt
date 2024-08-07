@@ -236,6 +236,9 @@ OPENGL_glu_LIBRARY:STRING=glu32
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=C:/Users/Vinii/Downloads/SDL2-devel-2.30.2-mingw/SDL2-2.30.2/x86_64-w64-mingw32/lib/cmake/SDL2
 
+//The directory containing a CMake configuration file for glm.
+glm_DIR:PATH=C:/Program Files (x86)/glm/share/glm
+
 //Value Computed by CMake
 v10_BINARY_DIR:STATIC=C:/Users/Vinii/Documents/VsCode/block-game/build
 
