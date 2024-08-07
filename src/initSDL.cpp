@@ -5,8 +5,6 @@
 #include <SDL2/SDL_scancode.h>
 #include <SDL2/SDL_stdinc.h>
 #include <SDL2/SDL_video.h>
-#include <cstdlib>
-#include <fstream>
 #include <glm/ext/matrix_clip_space.hpp>
 #include <glm/ext/matrix_float4x4.hpp>
 #include <glm/ext/matrix_transform.hpp>
@@ -17,6 +15,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+#include <fstream>
 #include <glad.h>
 #include "./hpp/Camera.hpp"
 
@@ -144,7 +144,7 @@ void handleInput() {
     }
 
     const Uint8 *state = SDL_GetKeyboardState(NULL);
-    const static float cameraSpeed = 0.01f;
+    const static float cameraSpeed = 0.1f;
     if (state[SDL_SCANCODE_W]) {
         camera.moveForward(cameraSpeed);
     }
@@ -156,6 +156,13 @@ void handleInput() {
     }
     if (state[SDL_SCANCODE_D]) {
         camera.moveRight(cameraSpeed);
+    }
+    if (state[SDL_SCANCODE_F]) {
+        camera.moveUp(cameraSpeed);
+    }
+    //TODO: use SHIFT + f instead of g
+    if (state[SDL_SCANCODE_G]) {
+        camera.moveDown(cameraSpeed);
     }
 }
 

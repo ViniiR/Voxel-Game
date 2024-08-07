@@ -17,6 +17,8 @@ class Camera {
         void moveBackward(float speed);
         void moveRight(float speed);
         void moveLeft(float speed);
+        void moveUp(float speed);
+        void moveDown(float speed);
 
     private:
         glm::vec3 eye;

@@ -1,4 +1,5 @@
 #include <glm/ext/vector_float2.hpp>
+#include <glm/geometric.hpp>
 #define GLM_ENABLE_EXPERIMENTAL
 
 #include "./hpp/Camera.hpp"
@@ -18,21 +19,37 @@ const glm::mat4 Camera::getViewMatrix() const {
 }
 
 void Camera::mouseLook(int mouseX, int mouseY) {
-    static bool firstLook = true;
-    glm::vec2 currentMousePosition = glm::vec2(mouseX, mouseY);
-    if (firstLook) {
-        previousMousePosition = currentMousePosition;
-        firstLook = false;
-    }
-
-    glm::vec2 mouseDelta = previousMousePosition = currentMousePosition;
-
-    viewDirection =
-        glm::rotate(viewDirection, glm::radians((float)mouseX), upVector);
-
-    previousMousePosition = currentMousePosition;
+    /*static bool firstLook = true;*/
+    /*glm::vec2 currentMousePosition = glm::vec2(mouseX, mouseY);*/
+    /*if (firstLook) {*/
+    /*    previousMousePosition = currentMousePosition;*/
+    /*    firstLook = false;*/
+    /*}*/
+    /**/
+    /*glm::vec2 mouseDelta = previousMousePosition = currentMousePosition;*/
+    /**/
+    /*viewDirection =*/
+    /*    glm::rotate(viewDirection, glm::radians((float)mouseX), upVector);*/
+    /**/
+    /*previousMousePosition = currentMousePosition;*/
 }
-void Camera::moveForward(float speed) { eye += viewDirection * speed; }
-void Camera::moveBackward(float speed) { eye -= viewDirection * speed; }
-void Camera::moveRight(float speed) {}
-void Camera::moveLeft(float speed) {}
+void Camera::moveForward(float speed) {
+    eye += viewDirection * speed;  //
+}
+void Camera::moveBackward(float speed) {
+    eye -= viewDirection * speed;  //
+}
+void Camera::moveRight(float speed) {
+    glm::vec3 strafeDirection = glm::cross(viewDirection, upVector);
+    eye += speed * strafeDirection;
+}
+void Camera::moveLeft(float speed) {
+    glm::vec3 strafeDirection = glm::cross(viewDirection, upVector);
+    eye -= speed * strafeDirection;
+}
+void Camera::moveUp(float speed) {
+    eye += speed * upVector;
+}
+void Camera::moveDown(float speed) {
+    eye -= speed * upVector;
+}
