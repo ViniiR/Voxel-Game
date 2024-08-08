@@ -10,7 +10,19 @@
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\initSDL.cpp">
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\drawing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\graphics_pipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\init_SDL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\input_handler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 file(GLOB SRC_FILES "main.cpp" "src/*.cpp" "glad/*.c" )
 set(GLAD_INCLUDE_DIRS "glad/")
 set(GLM_INCLUDE_DIRS "glm/")
+set(CUSTOM_INCLUDE_DIRS "src/hpp/")
 # "sources/headers/*.hpp"
 
 add_executable(
@@ -40,6 +41,7 @@ target_include_directories(
     PRIVATE ${GLAD_INCLUDE_DIRS}
     PRIVATE ${SDL2_INCLUDE_DIRS}
     PRIVATE ${OpenGL_INCLUDE_DIRS}
+    PRIVATE ${CUSTOM_INCLUDE_DIRS}
 )
 
 target_link_libraries(

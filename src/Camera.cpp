@@ -10,32 +10,31 @@
 
 Camera::Camera() {
     eye = glm::vec3(0.f, 0.f, 0.f);
-    viewDirection = glm::vec3(0.f, 0.f, -1.f);
-    upVector = glm::vec3(0.f, 1.f, 0.f);
+    view_direction = glm::vec3(0.f, 0.f, -1.f);
+    up_vector = glm::vec3(0.f, 1.f, 0.f);
 }
 
-const glm::mat4 Camera::getViewMatrix() const {
-    return glm::lookAt(eye, eye + viewDirection, upVector);
+const glm::mat4 Camera::get_view_matrix() const {
+    return glm::lookAt(eye, eye + view_direction, up_vector);
 }
 
 // by the way thanks to learnopengl.com cause without them this shit wouldnt
 // work and yes i had to write some of my own shit here (changing and creating
 // values at random till it worked(I AM NOT KIDDING LMAO))
-// make mousePos doubles instead of ints
-void Camera::mouseLook(int mouseX, int mouseY) {
-    glm::vec2 currentMousePosition = glm::vec2(mouseX, mouseY);
+void Camera::mouse_look(int mouse_x, int mouse_y) {
+    glm::vec2 currentMousePosition = glm::vec2(mouse_x, mouse_y);
 
     static bool firstLook = true;
 
     if (firstLook) {
-        previousMousePosition = currentMousePosition;
+        previous_mouse_position = currentMousePosition;
         firstLook = false;
     }
 
-    float offsetX = currentMousePosition.x - previousMousePosition.x;
-    float offsetY = currentMousePosition.y - previousMousePosition.y;
+    float offsetX = currentMousePosition.x - previous_mouse_position.x;
+    float offsetY = currentMousePosition.y - previous_mouse_position.y;
 
-    previousMousePosition = currentMousePosition;
+    previous_mouse_position = currentMousePosition;
 
     float mouseSensitivity = 0.1f;
     offsetX *= mouseSensitivity;
@@ -47,32 +46,32 @@ void Camera::mouseLook(int mouseX, int mouseY) {
     if (pitch > 89.0f) pitch = 89.0f;
     if (pitch < -89.0f) pitch = -89.0f;
 
-    viewDirection.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    viewDirection.y = -sin(glm::radians(pitch));
-    viewDirection.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    view_direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    view_direction.y = -sin(glm::radians(pitch));
+    view_direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 
-    /*eye = glm::normalize(viewDirection);*/
+    /*eye = glm::normalize(view_direction);*/
 
     /**/
-    /*glm::vec2 mouseDelta = currentMousePosition - previousMousePosition;*/
+    /*glm::vec2 mouseDelta = currentMousePosition - previous_mouse_position;*/
     /**/
-    /*viewDirection =*/
-    /*    glm::rotate(viewDirection * .5f, glm::radians((float)mouseX),
-     * upVector);*/
+    /*view_direction =*/
+    /*    glm::rotate(view_direction * .5f, glm::radians((float)mouseX),
+     * up_vector);*/
 }
-void Camera::moveForward(float speed) {
-    eye += viewDirection * speed;  //
+void Camera::move_forward(float speed) {
+    eye += view_direction * speed;  //
 }
-void Camera::moveBackward(float speed) {
-    eye -= viewDirection * speed;  //
+void Camera::move_backward(float speed) {
+    eye -= view_direction * speed;  //
 }
-void Camera::moveRight(float speed) {
-    glm::vec3 strafeDirection = glm::cross(viewDirection, upVector);
+void Camera::move_right(float speed) {
+    glm::vec3 strafeDirection = glm::cross(view_direction, up_vector);
     eye += speed * strafeDirection;
 }
-void Camera::moveLeft(float speed) {
-    glm::vec3 strafeDirection = glm::cross(viewDirection, upVector);
+void Camera::move_left(float speed) {
+    glm::vec3 strafeDirection = glm::cross(view_direction, up_vector);
     eye -= speed * strafeDirection;
 }
-void Camera::moveUp(float speed) { eye += speed * upVector; }
-void Camera::moveDown(float speed) { eye -= speed * upVector; }
+void Camera::move_up(float speed) { eye += speed * up_vector; }
+void Camera::move_down(float speed) { eye -= speed * up_vector; }

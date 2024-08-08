@@ -10,23 +10,22 @@
 class Camera {
     public:
         Camera();
-        const glm::mat4 getViewMatrix() const;
+        const glm::mat4 get_view_matrix() const;
 
-        void mouseLook(int mouseX, int mouseY);
-        void moveForward(float speed);
-        void moveBackward(float speed);
-        void moveRight(float speed);
-        void moveLeft(float speed);
-        void moveUp(float speed);
-        void moveDown(float speed);
+        void mouse_look(int mouse_x, int mouse_y);
+        void move_forward(float speed);
+        void move_backward(float speed);
+        void move_right(float speed);
+        void move_left(float speed);
+        void move_up(float speed);
+        void move_down(float speed);
 
         float yaw = -90.0f;
         float pitch = -1.0f;
 
     private:
         glm::vec3 eye;
-        glm::vec3 viewDirection;
-        glm::vec3 upVector;
-
-        glm::vec2 previousMousePosition;
+        glm::vec3 view_direction;
+        glm::vec3 up_vector;
+        glm::vec2 previous_mouse_position;
 };

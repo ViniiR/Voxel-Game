@@ -1,4 +1,5 @@
 CompileFlags:
   Add: [
     "-I/mnt/c/Users/Vinii/Documents/VsCode/block-game/glad/",
+    "-I/mnt/c/Users/Vinii/Documents/VsCode/block-game/src/hpp/",
   ]

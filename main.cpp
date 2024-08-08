@@ -1,7 +1,7 @@
 #include <SDL2/SDL_main.h>
 #include <cstdio>
 #include <iostream>
-#include "src/hpp/initSDL.hpp"
+#include "init_SDL.hpp"
 
 //std::cout works on: g++ Windows
 //works on cl.exe(msvs compiler)
@@ -12,5 +12,5 @@ int main(int argc, char* argv[]) {
     puts("no output");
     printf("👍👍👍👍👍👍👍👍👍");
 
-    return initSDL();
+    return init_SDL();
 }
