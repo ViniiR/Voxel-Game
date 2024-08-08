@@ -20,6 +20,9 @@ class Camera {
         void moveUp(float speed);
         void moveDown(float speed);
 
+        float yaw = -90.0f;
+        float pitch = -1.0f;
+
     private:
         glm::vec3 eye;
         glm::vec3 viewDirection;
