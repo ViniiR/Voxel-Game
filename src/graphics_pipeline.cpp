@@ -1,21 +1,23 @@
+#include <cstdlib>
 #include <fstream>
 #include <string>
 #include <iostream>
 #include "glad.h"
 #include "graphics_pipeline.hpp"
 
-GLuint create_graphics_pipeline(const std::string shadersDirectory,
-                                const std::string fragmentShaderFileName,
-                                const std::string vertexShaderFileName) {
-    static const std::string vertexShaderSource =
-        load_shader(shadersDirectory + vertexShaderFileName);
-    static const std::string fragmentShaderSource =
-        load_shader(shadersDirectory + fragmentShaderFileName);
+GLuint create_graphics_pipeline(const std::string shaders_dir,
+                                const std::string fragment_shader_filename,
+                                const std::string vertex_shader_filename) {
+    static const std::string vertex_shader_source_path =
+        load_shader(shaders_dir + vertex_shader_filename);
+    static const std::string fragment_shader_source_path =
+        load_shader(shaders_dir + fragment_shader_filename);
 
-    return create_shader_program(vertexShaderSource, fragmentShaderSource);
+    return create_shader_program(vertex_shader_source_path,
+                                 fragment_shader_source_path);
 }
 
-const std::string load_shader(const std::string &filePath) {
+std::string load_shader(const std::string &filePath) {
     std::string result = "";
 
     std::string line = "";
@@ -30,32 +32,88 @@ const std::string load_shader(const std::string &filePath) {
     return result;
 }
 
-GLuint create_shader_program(const std::string &vertexShaderSource,
-                             const std::string &fragmentShaderSource) {
-    const GLuint programObj = glCreateProgram();
+// for some dumb shit ass reason opengl throws 1282 if i call this function no
+// matter if its success or not
+/*enum GLuintObjectType { VertexShader, FragmentShader, Program };*/
+/**/
+/*bool validate_gluint_object(GLuintObjectType type, const GLuint obj) {*/
+/*    GLint success = 0;*/
+/*    GLchar info_log[512];*/
+/**/
+/*    switch (type) {*/
+/*        case VertexShader:*/
+/*            glGetShaderiv(obj, GL_COMPILE_STATUS, &success);*/
+/*            if (!success) {*/
+/*                glGetShaderInfoLog(obj, 512, nullptr, info_log);*/
+/*                std::cout << "error loading vertex_shader" << std::endl;*/
+/*            }*/
+/*        case FragmentShader:*/
+/*            glGetShaderiv(obj, GL_COMPILE_STATUS, &success);*/
+/*            if (!success) {*/
+/*                glGetShaderInfoLog(obj, 512, nullptr, info_log);*/
+/*                std::cout << "error loading vertex_shader" << std::endl;*/
+/*            }*/
+/*        case Program:*/
+/*            glGetProgramiv(obj, GL_LINK_STATUS, &success);*/
+/*            if (!success) {*/
+/*                glGetProgramInfoLog(obj, 512, nullptr, info_log);*/
+/*                std::cerr << "error linking shader program" << std::endl;*/
+/*            }*/
+/*    }*/
+/*    return success != 0 ? true : false;*/
+/*}*/
 
-    const GLuint vertexShader =
-        compile_shader(GL_VERTEX_SHADER, vertexShaderSource);
-    const GLuint fragmentShader =
-        compile_shader(GL_FRAGMENT_SHADER, fragmentShaderSource);
+GLuint create_shader_program(const std::string &vertex_shader_source,
+                             const std::string &fragment_shader_source) {
+    const GLuint program_object = glCreateProgram();
+    GLint success;
+    GLchar info_log[512];
 
-    glAttachShader(programObj, vertexShader);
-    glAttachShader(programObj, fragmentShader);
+    const GLuint vertex_shader =
+        compile_shader(GL_VERTEX_SHADER, vertex_shader_source);
+    const GLuint fragment_shader =
+        compile_shader(GL_FRAGMENT_SHADER, fragment_shader_source);
 
-    glLinkProgram(programObj);
-    glValidateProgram(programObj);
+    glGetShaderiv(vertex_shader, GL_COMPILE_STATUS, &success);
+    glGetShaderiv(fragment_shader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        std::cout << "OpenGL error on shader object:" << info_log << std::endl;
+        exit(-1);
+    }
 
-    return programObj;
+    glAttachShader(program_object, vertex_shader);
+    GLenum err;
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cerr << "attaching vertex shader error: " << err << std::endl;
+        exit(-1);
+    }
+    glAttachShader(program_object, fragment_shader);
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cerr << "attaching fragment shader error: " << err << std::endl;
+        exit(-1);
+    }
+
+    glLinkProgram(program_object);
+
+    glGetProgramiv(program_object, GL_LINK_STATUS, &success);
+    glValidateProgram(program_object);
+
+    if (!success) {
+        std::cout << "OpenGL error on program linking:" << info_log << std::endl;
+        exit(-1);
+    }
+
+    return program_object;
 }
 
 GLuint compile_shader(GLuint type, const std::string &src) {
-    GLuint shaderObj;
+    GLuint shader_object;
     switch (type) {
         case GL_VERTEX_SHADER:
-            shaderObj = glCreateShader(GL_VERTEX_SHADER);
+            shader_object = glCreateShader(GL_VERTEX_SHADER);
             break;
         case GL_FRAGMENT_SHADER:
-            shaderObj = glCreateShader(GL_FRAGMENT_SHADER);
+            shader_object = glCreateShader(GL_FRAGMENT_SHADER);
             break;
         default:
             std::cerr << "invalid GLuint enum variant on compileShader"
@@ -63,8 +121,8 @@ GLuint compile_shader(GLuint type, const std::string &src) {
             exit(-1);
     }
     const char *source = src.c_str();
-    glShaderSource(shaderObj, 1, &source, nullptr);
-    glCompileShader(shaderObj);
+    glShaderSource(shader_object, 1, &source, nullptr);
+    glCompileShader(shader_object);
 
-    return shaderObj;
+    return shader_object;
 }

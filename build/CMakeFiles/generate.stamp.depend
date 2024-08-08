@@ -95,9 +95,6 @@ C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/zOS-C-DetermineCompiler
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/CompilerId/VS-10.vcxproj.in
 C:/Program Files/CMake/share/cmake-3.29/Modules/FeatureSummary.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/FindOpenGL.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-Determine-CXX.cmake

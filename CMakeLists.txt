@@ -18,7 +18,7 @@ set(CUSTOM_INCLUDE_DIRS "src/hpp/")
 
 add_executable(
     ${PROJECT_NAME}
-    WIN32 ${SRC_FILES}
+    ${SRC_FILES}
 )
     # WIN32
 find_package(glm CONFIG REQUIRED)
@@ -31,16 +31,16 @@ if (NOT SDL2_FOUND)
     message(FATAL_ERROR "SDL2 NOT FOUND")
 endif()
 
-find_package(OpenGL REQUIRED)
-if (NOT OpenGL_FOUND)
-    message(FATAL_ERROR "OpenGL NOT FOUND")
-endif()
+# find_package(OpenGL REQUIRED)
+# if (NOT OpenGL_FOUND)
+#     message(FATAL_ERROR "OpenGL NOT FOUND")
+# endif()
 
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE ${GLAD_INCLUDE_DIRS}
     PRIVATE ${SDL2_INCLUDE_DIRS}
-    PRIVATE ${OpenGL_INCLUDE_DIRS}
+    # PRIVATE ${OpenGL_INCLUDE_DIRS}
     PRIVATE ${CUSTOM_INCLUDE_DIRS}
 )
 
@@ -48,9 +48,9 @@ target_link_libraries(
     ${PROJECT_NAME}
     PRIVATE
     SDL2::SDL2
-    SDL2::SDL2main
+    # SDL2::SDL2main
     glm::glm
-    ${OpenGL_LIBRARIES}
+    # ${OpenGL_LIBRARIES}
 )
 
 # v10:

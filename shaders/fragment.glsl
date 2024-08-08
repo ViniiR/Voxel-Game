@@ -1,13 +1,10 @@
 #version 410 core
 
-in vec3 vertexColors;
-
-//uniform mat4 uModelMatrix;
-//uniform mat4 uPerspective;
+in vec3 fragment_color;
 
 out vec4 color;
 
 void main()
 {
-    color = vec4(vertexColors.r, vertexColors.g, vertexColors.b, 1.0f);
+    color = vec4(fragment_color, 1.0f);
 };

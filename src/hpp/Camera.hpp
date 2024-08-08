@@ -10,7 +10,7 @@
 class Camera {
     public:
         Camera();
-        const glm::mat4 get_view_matrix() const;
+        glm::mat4 get_view_matrix() const;
 
         void mouse_look(int mouse_x, int mouse_y);
         void move_forward(float speed);

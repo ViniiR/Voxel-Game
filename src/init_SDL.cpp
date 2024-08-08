@@ -12,31 +12,25 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/trigonometric.hpp>
 #include <glm/vec3.hpp>
+#include <iostream>
 #include <string>
-#include <vector>
 #include <cstdlib>
 #include <glad.h>
 #include "Camera.hpp"
 #include "ScreenSize.hpp"
-/*#include "cube.hpp"*/
+#include "cube.hpp"
 #include "graphics_pipeline.hpp"
 #include "input_handler.hpp"
 #include "should_close_window.hpp"
 #include "drawing.hpp"
 
-void window_loop();
+void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO);
 void init_program();
 void destroy_program();
-
-void vertexSpecification();
 
 SDL_Window *window = nullptr;
 
 bool should_close_window = false;
-GLuint graphics_pipeline_shader_program = 0;
-GLuint vertex_array_object = 0;
-GLuint vertex_buffer_object = 0;
-GLuint index_buffer_object = 0;
 
 const std::string shaders_directory = "../shaders/";
 const std::string fragment_shader_filename = "fragment.glsl";
@@ -49,15 +43,71 @@ ScreenSize screen = {
 
 Camera *camera = new Camera();
 
+void vertexSpecification(GLuint vertexArrayObject, GLuint vertexBufferObject,
+                         GLuint vertexBufferObject2) {
+    const std::vector<GLfloat> vertexPositions = {
+        -0.5f, -0.5f, 0.0f,  //
+        0.5f,  -0.5f, 0.0f,  //
+        0.0f,  0.5f,  0.0f,  //
+    };
+    glGenVertexArrays(1, &vertexArrayObject);
+    glBindVertexArray(vertexArrayObject);
+    glGenBuffers(1, &vertexBufferObject);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
+    glBufferData(GL_ARRAY_BUFFER,
+                 vertexPositions.size() * sizeof(GLfloat),  //
+                 vertexPositions.data(), GL_STATIC_DRAW);
+
+    //
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,
+                          3,  // X Y Z
+                          GL_FLOAT, GL_FALSE, 0, (void *)0);
+
+    //
+
+    const std::vector<GLfloat> vertexColors = {
+        1.0f, 0.0f, 0.0f,  //
+        0.0f, 1.0f, 0.0f,  //
+        0.0f, 0.0f, 1.0f,  //
+    };
+    glGenBuffers(1, &vertexBufferObject2);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject2);
+    glBufferData(GL_ARRAY_BUFFER,
+                 vertexColors.size() * sizeof(GLfloat),  //
+                 vertexColors.data(), GL_STATIC_DRAW);
+
+    //
+
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,
+                          3,  // RGB
+                          GL_FLOAT, GL_FALSE, 0, (void *)0);
+
+    // bind vertex array where? (learn)
+    glBindVertexArray(0);
+
+    // post binding (cleanup)
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
+}
+
 int init_SDL() {
+    static GLuint graphics_pipeline_shader_program = 0;
+    static GLuint vertices_VBO = 0;
+    static GLuint color_VBO = 0;
+    static GLuint VAO = 0;
+
     init_program();
 
-    vertexSpecification();
+    /*cube_specification(vertices_VBO, VAO, color_VBO);*/
+    vertexSpecification(VAO, vertices_VBO, color_VBO);
 
     graphics_pipeline_shader_program = create_graphics_pipeline(
         shaders_directory, fragment_shader_filename, vertex_shader_filename);
 
-    window_loop();
+    window_loop(graphics_pipeline_shader_program, VAO, vertices_VBO);
 
     destroy_program();
 
@@ -70,8 +120,8 @@ void init_program() {
         exit(-1);
     }
 
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
@@ -96,6 +146,8 @@ void init_program() {
         exit(-1);
     }
 
+    std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+
     glEnable(GL_DEPTH_TEST);
     SDL_SetRelativeMouseMode(SDL_TRUE);
 
@@ -108,112 +160,27 @@ void destroy_program() {
     delete camera;
 }
 
-void window_loop() {
+void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO) {
     SDL_WarpMouseInWindow(window, screen.width / 2, screen.height / 2);
+
+    /*GLenum err;*/
+    /*while ((err = glGetError()) != GL_NO_ERROR) {*/
+    /*    std::cerr << "pre Window Loop error: " << err << std::endl;*/
+    /*    exit(-1);*/
+    /*}*/
 
     while (!should_close_window) {
         input_handler(camera, screen, window);
 
-        pre_draw(camera, screen, graphics_pipeline_shader_program);
+        pre_draw(camera, screen, program);
 
-        draw(vertex_array_object);
+        draw(VAO, vertices_VBO);
+        /*GLenum err;*/
+        /*while ((err = glGetError()) != GL_NO_ERROR) {*/
+        /*    std::cerr << "Window Loop error: " << err << std::endl;*/
+        /*    exit(-1);*/
+        /*}*/
 
         SDL_GL_SwapWindow(window);
     }
-}
-
-void vertexSpecification() {
-    static const std::vector<GLfloat> vertexData = {
-        // Vertex - 0
-        // x     y     z
-        -0.5f, -0.5f, 0.0f,  // Bottom Left Vertex position
-        1.0f, 0.0f, 0.0f,    // RGB color
-        // R     G     B
-        //
-        // Vertex - 1
-        // x     y     z
-        0.5f, -0.5f, 0.0f,  // Bottom Right Vertex position
-        0.0f, 1.0f, 0.0f,   // RGB color
-        // R     G     B
-        //
-        // Vertex - 2
-        // x     y     z
-        -0.5f, 0.5f, 0.0f,  // Top Left Vertex position
-        0.0f, 0.0f, 1.0f,   // RGB color
-        // R     G     B
-        //
-        // x     y     z
-        /*0.5f, -0.5f, 0.0f,  // Bottom Right Vertex position*/
-        /*0.0f, 1.0f, 0.0f,  // RGB color*/
-        // R     G     B
-        //
-        // Vertex - 3
-        // x     y     z
-        0.5f, 0.5f, 0.0f,  // Top Right Vertex position
-        1.0f, 0.0f, 0.0f,  // RGB color
-        // R     G     B
-        //
-        // x     y     z
-        /*-0.5f, 0.5f, 0.0f,  // Top Left Vertex position*/
-        /*0.0f, 0.0f, 1.0f,   // RGB color*/
-        // R     G     B
-    };
-    // drawing cuz ima dumbass:
-    // 2 & 2----------------1
-    // |\\                  |
-    // |  \\                |
-    // |    \\              |
-    // |      \\            |
-    // |        \\\\        |
-    // |            \\      |
-    // |              \\    |
-    // |                \\  |
-    // |                  \\|
-    // 0--------------------1 & 0
-
-    const std::vector<GLuint> indexBufferData = {
-        //
-        2, 0, 1,  //
-        3, 2, 1   //
-    };
-    glGenVertexArrays(1, &vertex_array_object);
-    glBindVertexArray(vertex_array_object);
-    glGenBuffers(1, &vertex_buffer_object);
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer_object);
-    glBufferData(GL_ARRAY_BUFFER,
-                 vertexData.size() * sizeof(GLfloat),  //
-                 vertexData.data(), GL_STATIC_DRAW);
-
-    //
-
-    // position information
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,
-                          3,                    //
-                          GL_FLOAT, GL_FALSE,   //
-                          sizeof(GLfloat) * 6,  //
-                          (GLvoid *)0);
-    // color information
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,
-                          3,                    //
-                          GL_FLOAT, GL_FALSE,   //
-                          sizeof(GLfloat) * 6,  //
-                          (GLvoid *)(sizeof(GLfloat) * 3));
-
-    // Gen IBO
-    glGenBuffers(1, &index_buffer_object);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer_object);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-                 indexBufferData.size() * sizeof(GLuint),  //
-                 indexBufferData.data(),                   //
-                 GL_STATIC_DRAW                            //
-    );
-
-    // bind vertex array where? (learn)
-    glBindVertexArray(0);
-
-    // post binding (cleanup)
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
 }

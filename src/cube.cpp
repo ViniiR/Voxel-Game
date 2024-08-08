@@ -1,8 +1,10 @@
 #include "cube.hpp"
+#include <iostream>
+#include <vector>
 #include "glad.h"
 
-void cube_specification() {
-    static const GLfloat g_vertex_buffer_data[] = {
+void cube_specification(GLuint vertices_VBO, GLuint VAO, GLuint color_VBO) {
+    static const std::vector<GLfloat> vertices_buffer_data = {
         -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  -1.0f, 1.0f,  1.0f,  1.0f,
         1.0f,  -1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f,  -1.0f, 1.0f,  -1.0f,
         1.0f,  -1.0f, -1.0f, -1.0f, 1.0f,  -1.0f, -1.0f, 1.0f,  1.0f,  -1.0f,
@@ -15,7 +17,7 @@ void cube_specification() {
         1.0f,  1.0f,  1.0f,  -1.0f, 1.0f,  -1.0f, -1.0f, 1.0f,  1.0f,  1.0f,
         1.0f,  1.0f,  -1.0f, 1.0f,  1.0f,  1.0f,  -1.0f, 1.0f};
 
-    static const GLfloat g_color_buffer_data[] = {
+    static const std::vector<GLfloat> color_buffer_data = {
         0.583f, 0.771f, 0.014f, 0.609f, 0.115f, 0.436f, 0.327f, 0.483f, 0.844f,
         0.822f, 0.569f, 0.201f, 0.435f, 0.602f, 0.223f, 0.310f, 0.747f, 0.185f,
         0.597f, 0.770f, 0.761f, 0.559f, 0.436f, 0.730f, 0.359f, 0.583f, 0.152f,
@@ -29,20 +31,37 @@ void cube_specification() {
         0.517f, 0.713f, 0.338f, 0.053f, 0.959f, 0.120f, 0.393f, 0.621f, 0.362f,
         0.673f, 0.211f, 0.457f, 0.820f, 0.883f, 0.371f, 0.982f, 0.099f, 0.879f};
 
-    GLuint colorbuffer;
-    glGenBuffers(1, &colorbuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data),
-                 g_color_buffer_data, GL_STATIC_DRAW);
+    // Generates and binds vertex Vertex Array Object
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    // Generates and binds vertex Vertex Buffer Object
+    glGenBuffers(1, &vertices_VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, vertices_VBO);
+    glBufferData(GL_ARRAY_BUFFER, vertices_buffer_data.size() * sizeof(GLfloat),
+                 vertices_buffer_data.data(), GL_STATIC_DRAW);
+
+    // Sets vertex attribute pointers
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    // Generates and binds color Vertex Buffer Object
+    glGenBuffers(1, &color_VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, color_VBO);
+    glBufferData(GL_ARRAY_BUFFER, color_buffer_data.size() * sizeof(GLfloat),
+                 color_buffer_data.data(), GL_STATIC_DRAW);
+
+    // Sets color attribute pointers
     glEnableVertexAttribArray(1);
-    glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
-    glVertexAttribPointer(1,  // attribute. No particular reason for 1, but must
-                              // match the layout in the shader.
-                          3,         // size
-                          GL_FLOAT,  // type
-                          GL_FALSE,  // normalized?
-                          0,         // stride
-                          (void*)0   // array buffer offset
-    );
-    glDrawArrays(GL_TRIANGLES, 0, 12 * 3);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    // cleanup
+    glBindVertexArray(0);
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
+
+    GLenum err = glGetError();
+    if (err != GL_NO_ERROR) {
+        std::cerr << "cube spec OpenGL error: " << err << std::endl;
+    }
 }

@@ -10,6 +10,9 @@
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\create_buffer_objects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

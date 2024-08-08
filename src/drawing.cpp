@@ -1,14 +1,41 @@
 #include <glad.h>
 #include "Camera.hpp"
 #include "ScreenSize.hpp"
+#include <cstdlib>
 #include <glm/ext/matrix_clip_space.hpp>
 #include <iostream>
 
-void draw(GLuint VAO) {
+void draw(GLuint VAO, GLuint vertices_VBO) {
     glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, vertices_VBO);
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    /*GLint bound_VAO = 0;*/
+    /**/
+    /*glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &bound_VAO);*/
+    /*if (bound_VAO != VAO) {*/
+    /*    std::cout << "No VAO bound" << std::endl;*/
+    /*    exit(-1);*/
+    /*}*/
+    /**/
+    /*GLint bufferBinding;*/
+    /*glGetIntegerv(GL_ARRAY_BUFFER_BINDING, &bufferBinding);*/
+    /*if (bufferBinding == 0) {*/
+    /*    std::cerr << "No VBO is bound to the VAO!" << std::endl;*/
+    /*    exit(-1);*/
+    /*} else {*/
+    /*    std::cout << "Number of VBOs attached to the VAO:" << bufferBinding*/
+    /*              << std::endl;*/
+    /*}*/
+
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    /*glDrawArrays(GL_TRIANGLES, 0, 12 * 3);*/
+    /*GLenum err;*/
+    /*while ((err = glGetError()) != GL_NO_ERROR) {*/
+    /*    std::cerr << "draw error: " << err << std::endl;*/
+    /*    exit(-1);*/
+    /*}*/
+
+    glBindVertexArray(0);
 }
 
 void pre_draw(Camera *camera, const ScreenSize &screen,
@@ -21,17 +48,15 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
 
     glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-    glUseProgram(graphicsPipelineShaderProgram);
-
     //
 
     const GLint uniformModelMatrixLocation =  //
         glGetUniformLocation(                 //
             graphicsPipelineShaderProgram,    //
-            "uModelMatrix"                    //
+            "model_matrix"                    //
         );
     if (uniformModelMatrixLocation == -1) {
-        std::cerr << "model matrix location not found" << std::endl;
+        std::cerr << "model_matrix location not found" << std::endl;
         exit(-1);
     }
 
@@ -48,11 +73,10 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
     const GLint uniformViewMatrixLocation =  //
         glGetUniformLocation(                //
             graphicsPipelineShaderProgram,   //
-            "uViewMatrix"                    //
+            "view_matrix"                    //
         );
     if (uniformViewMatrixLocation == -1) {
-        std::cerr << "uniform viewMatrix location location not found"
-                  << std::endl;
+        std::cerr << "view_matrix location not found" << std::endl;
         exit(-1);
     }
     glUniformMatrix4fv(uniformViewMatrixLocation, 1, GL_FALSE, &view[0][0]);
@@ -62,10 +86,10 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
     const GLint uniformProjectionLocation =  //
         glGetUniformLocation(                //
             graphicsPipelineShaderProgram,   //
-            "uProjection"                    //
+            "projection"                     //
         );
     if (uniformProjectionLocation == -1) {
-        std::cerr << "uniform uProjection location not found" << std::endl;
+        std::cerr << "projection location not found" << std::endl;
         exit(-1);
     }
 
@@ -75,4 +99,6 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
         100.0f);
     glUniformMatrix4fv(uniformProjectionLocation, 1, GL_FALSE,
                        &perspective[0][0]);
+
+    glUseProgram(graphicsPipelineShaderProgram);
 }

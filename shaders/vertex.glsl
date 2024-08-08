@@ -1,20 +1,17 @@
 #version 410 core
 
-layout(location=0) in vec3 position;
-layout(location=1) in vec3 vColors;
+layout(location=0) in vec3 vertex_position;
+layout(location=1) in vec3 vertex_color;
 
-uniform mat4 uModelMatrix;
-uniform mat4 uProjection;
-uniform mat4 uViewMatrix;
+uniform mat4 model_matrix;
+uniform mat4 projection;
+uniform mat4 view_matrix;
 
-out vec3 vertexColors;
+out vec3 fragment_color;
 
 void main()
 {
-    vertexColors = vColors;
+    fragment_color = vertex_color;
 
-    vec4 uPos = uProjection * uViewMatrix * uModelMatrix * vec4(position, 1.0f);
-
-    gl_Position = uPos;
-    //gl_Position = vec4(position.x, position.y, position.z, 1.0f);
+    gl_Position = projection * view_matrix * model_matrix * vec4(vertex_position, 1.0f);
 };

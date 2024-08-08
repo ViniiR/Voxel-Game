@@ -14,7 +14,7 @@ Camera::Camera() {
     up_vector = glm::vec3(0.f, 1.f, 0.f);
 }
 
-const glm::mat4 Camera::get_view_matrix() const {
+glm::mat4 Camera::get_view_matrix() const {
     return glm::lookAt(eye, eye + view_direction, up_vector);
 }
 
@@ -49,15 +49,6 @@ void Camera::mouse_look(int mouse_x, int mouse_y) {
     view_direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
     view_direction.y = -sin(glm::radians(pitch));
     view_direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-
-    /*eye = glm::normalize(view_direction);*/
-
-    /**/
-    /*glm::vec2 mouseDelta = currentMousePosition - previous_mouse_position;*/
-    /**/
-    /*view_direction =*/
-    /*    glm::rotate(view_direction * .5f, glm::radians((float)mouseX),
-     * up_vector);*/
 }
 void Camera::move_forward(float speed) {
     eye += view_direction * speed;  //
@@ -75,3 +66,4 @@ void Camera::move_left(float speed) {
 }
 void Camera::move_up(float speed) { eye += speed * up_vector; }
 void Camera::move_down(float speed) { eye -= speed * up_vector; }
+

@@ -12,4 +12,4 @@ GLuint create_shader_program(const std::string &vertexShaderSource,
 
 GLuint compile_shader(GLuint type, const std::string &src);
 
-const std::string load_shader(const std::string &filePath);
+std::string load_shader(const std::string &filePath);

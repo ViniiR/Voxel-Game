@@ -27,17 +27,19 @@ void input_handler(Camera *camera, const ScreenSize &screen,
                 camera->mouse_look(mouseXpos, mouseYpos);
                 break;
             case SDL_KEYDOWN: {
-                static const SDL_bool is_mouse_relative_mode =
-                    SDL_GetRelativeMouseMode();
-                if (is_mouse_relative_mode) {
-                    SDL_WarpMouseInWindow(window, screen.width / 2,
-                                          screen.height / 2);
-                }
                 if (state[SDL_SCANCODE_ESCAPE]) {
-                    // prevents ESC key spam (causes lag)
                     if (event.key.repeat) {
                         break;
                     }
+
+                    const SDL_bool is_mouse_relative_mode =
+                        SDL_GetRelativeMouseMode();
+
+                    if (is_mouse_relative_mode) {
+                        SDL_WarpMouseInWindow(window, screen.width / 2,
+                                              screen.height / 2);
+                    }
+
                     SDL_SetRelativeMouseMode(is_mouse_relative_mode ? SDL_FALSE
                                                                     : SDL_TRUE);
                 }
