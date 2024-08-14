@@ -24,7 +24,7 @@ events:
       The output was:
       0
       Versão do MSBuild 17.8.3+195e7f5a3 para .NET Framework
-      Compilação de 14/08/2024 13:35:44 iniciada.
+      Compilação de 14/08/2024 17:08:00 iniciada.
       
       Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\3.29.5\\CompilerIdC\\CompilerIdC.vcxproj" no nó 1 (destinos padrão).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Aviso(s)
           0 Erro(s)
       
-      Tempo Decorrido 00:00:00.55
+      Tempo Decorrido 00:00:00.53
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -79,7 +79,7 @@ events:
       The output was:
       0
       Versão do MSBuild 17.8.3+195e7f5a3 para .NET Framework
-      Compilação de 14/08/2024 13:35:45 iniciada.
+      Compilação de 14/08/2024 17:08:00 iniciada.
       
       Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\3.29.5\\CompilerIdCXX\\CompilerIdCXX.vcxproj" no nó 1 (destinos padrão).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           0 Aviso(s)
           0 Erro(s)
       
-      Tempo Decorrido 00:00:00.52
+      Tempo Decorrido 00:00:00.54
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-vg3ed2"
-      binary: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-vg3ed2"
+      source: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-otskhc"
+      binary: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-otskhc"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -137,34 +137,34 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-vg3ed2'
+        Change Dir: 'C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-otskhc'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c0610.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7ff0f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.8.3+195e7f5a3 para .NET Framework
-        Compilação de 14/08/2024 13:35:46 iniciada.
+        Compilação de 14/08/2024 17:08:01 iniciada.
         
-        Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vg3ed2\\cmTC_c0610.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-otskhc\\cmTC_7ff0f.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_c0610.dir\\Debug\\".
+          Criando o diretório "cmTC_7ff0f.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Criando o diretório "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vg3ed2\\Debug\\".
-          Criando o diretório "cmTC_c0610.dir\\Debug\\cmTC_c0610.tlog\\".
+          Criando o diretório "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-otskhc\\Debug\\".
+          Criando o diretório "cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_c0610.dir\\Debug\\cmTC_c0610.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_c0610.dir\\Debug\\cmTC_c0610.tlog\\unsuccessfulbuild".
+          Criando "cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c0610.dir\\Debug\\\\" /Fd"cmTC_c0610.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7ff0f.dir\\Debug\\\\" /Fd"cmTC_7ff0f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33134 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c0610.dir\\Debug\\\\" /Fd"cmTC_c0610.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7ff0f.dir\\Debug\\\\" /Fd"cmTC_7ff0f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vg3ed2\\Debug\\cmTC_c0610.exe" /INCREMENTAL /ILK:"cmTC_c0610.dir\\Debug\\cmTC_c0610.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-vg3ed2/Debug/cmTC_c0610.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-vg3ed2/Debug/cmTC_c0610.lib" /MACHINE:X64  /machine:x64 cmTC_c0610.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_c0610.vcxproj -> C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vg3ed2\\Debug\\cmTC_c0610.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-otskhc\\Debug\\cmTC_7ff0f.exe" /INCREMENTAL /ILK:"cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-otskhc/Debug/cmTC_7ff0f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-otskhc/Debug/cmTC_7ff0f.lib" /MACHINE:X64  /machine:x64 cmTC_7ff0f.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_7ff0f.vcxproj -> C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-otskhc\\Debug\\cmTC_7ff0f.exe
         FinalizeBuildStatus:
-          Excluindo o arquivo "cmTC_c0610.dir\\Debug\\cmTC_c0610.tlog\\unsuccessfulbuild".
-          Tocando "cmTC_c0610.dir\\Debug\\cmTC_c0610.tlog\\cmTC_c0610.lastbuildstate".
-        Projeto de compilação pronto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vg3ed2\\cmTC_c0610.vcxproj" (destinos padrão).
+          Excluindo o arquivo "cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_7ff0f.dir\\Debug\\cmTC_7ff0f.tlog\\cmTC_7ff0f.lastbuildstate".
+        Projeto de compilação pronto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-otskhc\\cmTC_7ff0f.vcxproj" (destinos padrão).
         
         Compilação com êxito.
             0 Aviso(s)
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-8oof55"
-      binary: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-8oof55"
+      source: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-13ty6o"
+      binary: "C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-13ty6o"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-8oof55'
+        Change Dir: 'C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-13ty6o'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_07440.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a33ed.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.8.3+195e7f5a3 para .NET Framework
-        Compilação de 14/08/2024 13:35:46 iniciada.
+        Compilação de 14/08/2024 17:08:02 iniciada.
         
-        Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oof55\\cmTC_07440.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-13ty6o\\cmTC_a33ed.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_07440.dir\\Debug\\".
+          Criando o diretório "cmTC_a33ed.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Criando o diretório "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oof55\\Debug\\".
-          Criando o diretório "cmTC_07440.dir\\Debug\\cmTC_07440.tlog\\".
+          Criando o diretório "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-13ty6o\\Debug\\".
+          Criando o diretório "cmTC_a33ed.dir\\Debug\\cmTC_a33ed.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_07440.dir\\Debug\\cmTC_07440.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_07440.dir\\Debug\\cmTC_07440.tlog\\unsuccessfulbuild".
+          Criando "cmTC_a33ed.dir\\Debug\\cmTC_a33ed.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_a33ed.dir\\Debug\\cmTC_a33ed.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_07440.dir\\Debug\\\\" /Fd"cmTC_07440.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a33ed.dir\\Debug\\\\" /Fd"cmTC_a33ed.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33134 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_07440.dir\\Debug\\\\" /Fd"cmTC_07440.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a33ed.dir\\Debug\\\\" /Fd"cmTC_a33ed.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oof55\\Debug\\cmTC_07440.exe" /INCREMENTAL /ILK:"cmTC_07440.dir\\Debug\\cmTC_07440.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-8oof55/Debug/cmTC_07440.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-8oof55/Debug/cmTC_07440.lib" /MACHINE:X64  /machine:x64 cmTC_07440.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_07440.vcxproj -> C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oof55\\Debug\\cmTC_07440.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-13ty6o\\Debug\\cmTC_a33ed.exe" /INCREMENTAL /ILK:"cmTC_a33ed.dir\\Debug\\cmTC_a33ed.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-13ty6o/Debug/cmTC_a33ed.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Vinii/Documents/VsCode/block-game/build/CMakeFiles/CMakeScratch/TryCompile-13ty6o/Debug/cmTC_a33ed.lib" /MACHINE:X64  /machine:x64 cmTC_a33ed.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_a33ed.vcxproj -> C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-13ty6o\\Debug\\cmTC_a33ed.exe
         FinalizeBuildStatus:
-          Excluindo o arquivo "cmTC_07440.dir\\Debug\\cmTC_07440.tlog\\unsuccessfulbuild".
-          Tocando "cmTC_07440.dir\\Debug\\cmTC_07440.tlog\\cmTC_07440.lastbuildstate".
-        Projeto de compilação pronto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8oof55\\cmTC_07440.vcxproj" (destinos padrão).
+          Excluindo o arquivo "cmTC_a33ed.dir\\Debug\\cmTC_a33ed.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_a33ed.dir\\Debug\\cmTC_a33ed.tlog\\cmTC_a33ed.lastbuildstate".
+        Projeto de compilação pronto "C:\\Users\\Vinii\\Documents\\VsCode\\block-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-13ty6o\\cmTC_a33ed.vcxproj" (destinos padrão).
         
         Compilação com êxito.
             0 Aviso(s)
             0 Erro(s)
         
-        Tempo Decorrido 00:00:00.53
+        Tempo Decorrido 00:00:00.52
         
       exitCode: 0
   -

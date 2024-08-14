@@ -1,4 +1,5 @@
 #pragma once
 
 #include "glad.h"
-GLuint cube_specification(GLuint vertex_VBO, GLuint vertex_VAO, GLuint color_VBO);
+
+GLuint cube_specification(GLuint VAO, GLuint VBO, GLuint EBO);
