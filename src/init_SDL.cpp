@@ -43,66 +43,16 @@ ScreenSize screen = {
 
 Camera *camera = new Camera();
 
-void vertexSpecification(GLuint vertexArrayObject, GLuint vertexBufferObject,
-                         GLuint vertexBufferObject2) {
-    const std::vector<GLfloat> vertexPositions = {
-        -0.5f, -0.5f, 0.0f,  //
-        0.5f,  -0.5f, 0.0f,  //
-        0.0f,  0.5f,  0.0f,  //
-    };
-    glGenVertexArrays(1, &vertexArrayObject);
-    glBindVertexArray(vertexArrayObject);
-    glGenBuffers(1, &vertexBufferObject);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
-    glBufferData(GL_ARRAY_BUFFER,
-                 vertexPositions.size() * sizeof(GLfloat),  //
-                 vertexPositions.data(), GL_STATIC_DRAW);
-
-    //
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,
-                          3,  // X Y Z
-                          GL_FLOAT, GL_FALSE, 0, (void *)0);
-
-    //
-
-    const std::vector<GLfloat> vertexColors = {
-        1.0f, 0.0f, 0.0f,  //
-        0.0f, 1.0f, 0.0f,  //
-        0.0f, 0.0f, 1.0f,  //
-    };
-    glGenBuffers(1, &vertexBufferObject2);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject2);
-    glBufferData(GL_ARRAY_BUFFER,
-                 vertexColors.size() * sizeof(GLfloat),  //
-                 vertexColors.data(), GL_STATIC_DRAW);
-
-    //
-
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,
-                          3,  // RGB
-                          GL_FLOAT, GL_FALSE, 0, (void *)0);
-
-    // bind vertex array where? (learn)
-    glBindVertexArray(0);
-
-    // post binding (cleanup)
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-}
-
 int init_SDL() {
     static GLuint graphics_pipeline_shader_program = 0;
+    static GLuint VAO = 0;
     static GLuint vertices_VBO = 0;
     static GLuint color_VBO = 0;
-    static GLuint VAO = 0;
+    static GLuint IBO = 0;
 
     init_program();
 
-    /*cube_specification(vertices_VBO, VAO, color_VBO);*/
-    vertexSpecification(VAO, vertices_VBO, color_VBO);
+    VAO = cube_specification(vertices_VBO, VAO, color_VBO);
 
     graphics_pipeline_shader_program = create_graphics_pipeline(
         shaders_directory, fragment_shader_filename, vertex_shader_filename);
@@ -163,11 +113,11 @@ void destroy_program() {
 void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO) {
     SDL_WarpMouseInWindow(window, screen.width / 2, screen.height / 2);
 
-    /*GLenum err;*/
-    /*while ((err = glGetError()) != GL_NO_ERROR) {*/
-    /*    std::cerr << "pre Window Loop error: " << err << std::endl;*/
-    /*    exit(-1);*/
-    /*}*/
+    GLenum err;
+    while ((err = glGetError()) != GL_NO_ERROR) {
+        std::cerr << "pre Window Loop error: " << err << std::endl;
+        exit(-1);
+    }
 
     while (!should_close_window) {
         input_handler(camera, screen, window);
@@ -175,11 +125,6 @@ void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO) {
         pre_draw(camera, screen, program);
 
         draw(VAO, vertices_VBO);
-        /*GLenum err;*/
-        /*while ((err = glGetError()) != GL_NO_ERROR) {*/
-        /*    std::cerr << "Window Loop error: " << err << std::endl;*/
-        /*    exit(-1);*/
-        /*}*/
 
         SDL_GL_SwapWindow(window);
     }

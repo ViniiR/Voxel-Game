@@ -103,6 +103,9 @@ GLuint create_shader_program(const std::string &vertex_shader_source,
         exit(-1);
     }
 
+    glDeleteShader(vertex_shader);
+    glDeleteShader(fragment_shader);
+
     return program_object;
 }
 

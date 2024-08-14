@@ -7,40 +7,35 @@
 
 void draw(GLuint VAO, GLuint vertices_VBO) {
     glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, vertices_VBO);
 
-    /*GLint bound_VAO = 0;*/
-    /**/
+    GLint bound_VAO = 0;
+
     /*glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &bound_VAO);*/
     /*if (bound_VAO != VAO) {*/
     /*    std::cout << "No VAO bound" << std::endl;*/
     /*    exit(-1);*/
     /*}*/
-    /**/
+
     /*GLint bufferBinding;*/
     /*glGetIntegerv(GL_ARRAY_BUFFER_BINDING, &bufferBinding);*/
     /*if (bufferBinding == 0) {*/
     /*    std::cerr << "No VBO is bound to the VAO!" << std::endl;*/
-    /*    exit(-1);*/
     /*} else {*/
     /*    std::cout << "Number of VBOs attached to the VAO:" << bufferBinding*/
     /*              << std::endl;*/
     /*}*/
 
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    /*glDrawArrays(GL_TRIANGLES, 0, 12 * 3);*/
-    /*GLenum err;*/
-    /*while ((err = glGetError()) != GL_NO_ERROR) {*/
-    /*    std::cerr << "draw error: " << err << std::endl;*/
-    /*    exit(-1);*/
-    /*}*/
+    /*glDrawArrays(GL_TRIANGLES, 0, 3);*/
+    glDrawArrays(GL_TRIANGLES, 0, 12 * 3);
 
+    // unbinds current VAO
     glBindVertexArray(0);
 }
 
 void pre_draw(Camera *camera, const ScreenSize &screen,
               GLuint graphicsPipelineShaderProgram) {
-    glDisable(GL_DEPTH_TEST);
+    /*glDisable(GL_DEPTH_TEST);*/
+    // learn about cull face
     glDisable(GL_CULL_FACE);
 
     glViewport(0, 0, screen.width, screen.height);
@@ -48,6 +43,7 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
 
     glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
+    glUseProgram(graphicsPipelineShaderProgram);
     //
 
     const GLint uniformModelMatrixLocation =  //
@@ -99,6 +95,4 @@ void pre_draw(Camera *camera, const ScreenSize &screen,
         100.0f);
     glUniformMatrix4fv(uniformProjectionLocation, 1, GL_FALSE,
                        &perspective[0][0]);
-
-    glUseProgram(graphicsPipelineShaderProgram);
 }
