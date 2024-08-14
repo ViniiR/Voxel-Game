@@ -7,6 +7,11 @@
 
 void draw(GLuint VAO, GLuint vertices_VBO) {
     glBindVertexArray(VAO);
+    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+    glBindVertexArray(0);
+
+    return;
+    glBindVertexArray(VAO);
 
     GLint bound_VAO = 0;
 
