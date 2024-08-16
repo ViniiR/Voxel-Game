@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Block.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -26,6 +29,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\input_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\textures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

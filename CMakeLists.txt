@@ -14,6 +14,7 @@ file(GLOB SRC_FILES "main.cpp" "src/*.cpp" "glad/*.c" )
 set(GLAD_INCLUDE_DIRS "glad/")
 set(GLM_INCLUDE_DIRS "glm/")
 set(CUSTOM_INCLUDE_DIRS "src/hpp/")
+set(STB_INCLUDE_DIRS "stb/")
 # "sources/headers/*.hpp"
 
 add_executable(
@@ -39,6 +40,7 @@ endif()
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE ${GLAD_INCLUDE_DIRS}
+    PRIVATE ${STB_INCLUDE_DIRS}
     PRIVATE ${SDL2_INCLUDE_DIRS}
     # PRIVATE ${OpenGL_INCLUDE_DIRS}
     PRIVATE ${CUSTOM_INCLUDE_DIRS}

@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Vinii/Downloads/SDL2-devel-2.30.2-mingw/SDL2-2.30.2/x86_64-w64-mingw32/include/SDL2" /external:I "C:/Program Files (x86)/glm/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -105,10 +105,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -131,7 +131,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Vinii/Downloads/SDL2-devel-2.30.2-mingw/SDL2-2.30.2/x86_64-w64-mingw32/include/SDL2" /external:I "C:/Program Files (x86)/glm/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -150,10 +150,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -176,7 +176,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Vinii/Downloads/SDL2-devel-2.30.2-mingw/SDL2-2.30.2/x86_64-w64-mingw32/include/SDL2" /external:I "C:/Program Files (x86)/glm/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -195,10 +195,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -221,7 +221,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Vinii/Downloads/SDL2-devel-2.30.2-mingw/SDL2-2.30.2/x86_64-w64-mingw32/include/SDL2" /external:I "C:/Program Files (x86)/glm/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -239,10 +239,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vinii\Documents\VsCode\block-game\glad;C:\Users\Vinii\Documents\VsCode\block-game\stb;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include;C:\Users\Vinii\Documents\VsCode\block-game\src\hpp;C:\Users\Vinii\Downloads\SDL2-devel-2.30.2-mingw\SDL2-2.30.2\x86_64-w64-mingw32\include\SDL2;C:\Program Files (x86)\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -328,6 +328,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ScanSourceForModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\main.cpp" />
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Block.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\Camera.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\create_buffer_objects.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\cube.cpp" />
@@ -335,6 +336,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\graphics_pipeline.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\init_SDL.cpp" />
     <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\input_handler.cpp" />
+    <ClCompile Include="C:\Users\Vinii\Documents\VsCode\block-game\src\textures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Vinii\Documents\VsCode\block-game\build\ZERO_CHECK.vcxproj">

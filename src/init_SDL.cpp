@@ -16,6 +16,7 @@
 #include <string>
 #include <cstdlib>
 #include <glad.h>
+#include "Block.hpp"
 #include "Camera.hpp"
 #include "ScreenSize.hpp"
 #include "cube.hpp"
@@ -24,7 +25,7 @@
 #include "should_close_window.hpp"
 #include "drawing.hpp"
 
-void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO);
+void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO, GLuint EBO);
 void init_program();
 void destroy_program();
 
@@ -43,7 +44,6 @@ ScreenSize screen = {
 
 Camera *camera = new Camera();
 
-
 int init_SDL() {
     static GLuint graphics_pipeline_shader_program = 0;
     static GLuint VAO = 0;
@@ -58,7 +58,7 @@ int init_SDL() {
     graphics_pipeline_shader_program = create_graphics_pipeline(
         shaders_directory, fragment_shader_filename, vertex_shader_filename);
 
-    window_loop(graphics_pipeline_shader_program, VAO, vertices_VBO);
+    window_loop(graphics_pipeline_shader_program, VAO, vertices_VBO, EBO);
 
     destroy_program();
 
@@ -111,7 +111,7 @@ void destroy_program() {
     delete camera;
 }
 
-void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO) {
+void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO, GLuint EBO) {
     SDL_WarpMouseInWindow(window, screen.width / 2, screen.height / 2);
 
     GLenum err;
@@ -120,12 +120,33 @@ void window_loop(GLuint program, GLuint VAO, GLuint vertices_VBO) {
         exit(-1);
     }
 
+    Block grass_block(VAO, EBO, GrassTextures);
+
     while (!should_close_window) {
         input_handler(camera, screen, window);
 
         pre_draw(camera, screen, program);
 
-        draw(VAO, vertices_VBO);
+        /*draw(VAO, vertices_VBO);*/
+
+        grass_block.tmp_draw_lottacubes(program, 10);
+
+        /*grass_block.draw_block();*/
+
+        /*draw_cube_face(VAO, "../textures/blocks/grass_block/grass_side.bmp",*/
+        /*               Back, EBO);*/
+        /*draw_cube_face(VAO, "../textures/blocks/grass_block/grass_side.bmp",*/
+        /*               Front, EBO);*/
+        /*draw_cube_face(VAO, "../textures/blocks/grass_block/grass_side.bmp",*/
+        /*               Right, EBO);*/
+        /*draw_cube_face(VAO, "../textures/blocks/grass_block/grass_side.bmp",*/
+        /*               Left, EBO);*/
+        /*draw_cube_face(VAO, "../textures/blocks/grass_block/grass_top.bmp",
+         * Top,*/
+        /*               EBO);*/
+        /*draw_cube_face(VAO,
+         * "../textures/blocks/grass_block/grass_bottom.bmp",*/
+        /*               Bottom, EBO);*/
 
         SDL_GL_SwapWindow(window);
     }

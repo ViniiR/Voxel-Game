@@ -6,6 +6,8 @@
 #include <glm/ext/vector_float2.hpp>
 #include <glm/ext/vector_float3.hpp>
 #include <glm/vec3.hpp>
+#include "ScreenSize.hpp"
+#include "glad.h"
 
 class Camera {
     public:
@@ -19,6 +21,8 @@ class Camera {
         void move_left(float speed);
         void move_up(float speed);
         void move_down(float speed);
+
+        void create_camera(GLuint shader_program, ScreenSize screen);
 
         float yaw = -90.0f;
         float pitch = -1.0f;
