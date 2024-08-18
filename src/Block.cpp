@@ -34,7 +34,7 @@ Block::Block(GLuint VAO, GLuint EBO, BlockTextures textures) {
 }
 
 void Block::tmp_draw_lottacubes(GLuint shader_program,
-                                unsigned int cube_number) {
+                                unsigned int cube_number = 1) {
     static const GLuint model_matrix_location = glGetUniformLocation(  //
         shader_program,                                                //
         "model_matrix"                                                 //
@@ -45,6 +45,40 @@ void Block::tmp_draw_lottacubes(GLuint shader_program,
         // Calculate the position of the cube
         glm::vec3 position =
             glm::vec3(i * 1.0f, 0.0f, 0.0f);  // Move cubes along the x-axis
+
+        // Apply translation
+        model = glm::translate(model, position);
+
+        // Send the model matrix to your shader
+        glUniformMatrix4fv(model_matrix_location, 1, GL_FALSE,
+                           glm::value_ptr(model));
+
+        this->draw_block();
+    }
+
+    for (unsigned int i = 0; i < cube_number; i++) {
+        glm::mat4 model = glm::mat4(1.0f);  // Identity matrix
+
+        // Calculate the position of the cube
+        glm::vec3 position =
+            glm::vec3(0.0f, 0.0f, i * 1.0f);  // Move cubes along the x-axis
+
+        // Apply translation
+        model = glm::translate(model, position);
+
+        // Send the model matrix to your shader
+        glUniformMatrix4fv(model_matrix_location, 1, GL_FALSE,
+                           glm::value_ptr(model));
+
+        this->draw_block();
+    }
+
+    for (unsigned int i = 0; i < cube_number; i++) {
+        glm::mat4 model = glm::mat4(1.0f);  // Identity matrix
+
+        // Calculate the position of the cube
+        glm::vec3 position =
+            glm::vec3(0.0f, i * 1.0f, 0.0f);  // Move cubes along the x-axis
 
         // Apply translation
         model = glm::translate(model, position);
